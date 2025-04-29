@@ -130,7 +130,7 @@ const Resume = () => {
       
       <div className="flex justify-between items-center mt-8 mb-12">
         <h2 className="text-xl font-semibold">Professional Overview</h2>
-        <DownloadButton text="Download PDF" link="/assets/resume.pdf" />
+        <DownloadButton text="Download PDF" link="./assets/ShreyaReddy.pdf" />
       </div>
       
       <motion.div

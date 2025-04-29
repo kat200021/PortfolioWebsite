@@ -8,7 +8,7 @@ import Resume from './pages/Resume';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/PortfolioWebsite">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
