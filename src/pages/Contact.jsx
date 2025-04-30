@@ -23,26 +23,21 @@ const Contact = () => {
     setSubmitError(null);
     
     try {
-      // Specify the full URL to your backend server
-      const response = await fetch('/api/contact', {
+      // Send to Formspree
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID_HERE', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData),
-        credentials: 'omit' // Don't send cookies with the request
+        body: JSON.stringify(formData)
       });
 
-      console.log('Response status:', response.status);
-      console.log('Response ok?', response.ok);
-
       if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Server responded with ${response.status}: ${errorText || response.statusText}`);
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Form submission failed');
       }
       
-      // const data = await response.json();
       setSubmitSuccess(true);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -51,7 +46,6 @@ const Contact = () => {
       setSubmitting(false);
     }
   };
-
 
   const pageVariants = {
     initial: { opacity: 0, y: 20 },
@@ -149,6 +143,7 @@ const Contact = () => {
 
 export default Contact;
 
+
 // import React, { useState } from 'react';
 // import { motion } from 'framer-motion';
 // import PageHeader from '../components/ui/PageHeader';
@@ -174,33 +169,26 @@ export default Contact;
 //     setSubmitError(null);
     
 //     try {
-//       const response = await fetch('http://localhost:5000/api/contact', {
+//       // Specify the full URL to your backend server
+//       const response = await fetch('/api/contact', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
+//           'Accept': 'application/json'
 //         },
-//         body: JSON.stringify(formData)
+//         body: JSON.stringify(formData),
+//         credentials: 'omit' // Don't send cookies with the request
 //       });
 
-//       console.log('Response status:', response.status);  // <--- Add this
-//       console.log('Response ok?', response.ok);          // <--- Add this
+//       console.log('Response status:', response.status);
+//       console.log('Response ok?', response.ok);
 
-//       let data = null;
-
-//       if (response.ok) {
-//         data = await response.json();
-//       }
-  
-//       // Only try to parse JSON if response has content
-//       // const contentType = response.headers.get('content-type');
-//       // if (contentType && contentType.includes('application/json')) {
-//       //   data = await response.json();
-//       // }
-      
 //       if (!response.ok) {
-//         throw new Error(data.message || 'Something went wrong');
+//         const errorText = await response.text();
+//         throw new Error(`Server responded with ${response.status}: ${errorText || response.statusText}`);
 //       }
       
+//       // const data = await response.json();
 //       setSubmitSuccess(true);
 //     } catch (error) {
 //       console.error('Error submitting form:', error);
@@ -231,7 +219,7 @@ export default Contact;
 //     {
 //       icon: <MapPin className="w-6 h-6" />,
 //       title: 'Location',
-//       value: 'Mobile, AL',
+//       value: 'Austin, TX',
 //       link: null
 //     },
 //     {
@@ -306,3 +294,4 @@ export default Contact;
 // };
 
 // export default Contact;
+

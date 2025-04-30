@@ -6,7 +6,6 @@ import SkillBadge from '../components/ui/SkillBadge';
 import DownloadButton from '../components/ui/DownloadButton';
 
 const Resume = () => {
-  // Sample resume data - replace with your actual information
   const workExperience = [
     {
       id: 3,
@@ -130,7 +129,7 @@ const Resume = () => {
       
       <div className="flex justify-between items-center mt-8 mb-12">
         <h2 className="text-xl font-semibold">Professional Overview</h2>
-        <DownloadButton text="Download PDF" link="./assets/ShreyaReddy.pdf" />
+        <DownloadButton link="/assets/ShreyaReddy.pdf" text="Download PDF" />
       </div>
       
       <motion.div
