@@ -88,7 +88,7 @@ const About = () => {
             >
               <div className="aspect-w-3 aspect-h-4 rounded-xl overflow-hidden shadow-lg">
                 <img
-                  src={myPhoto}
+                  src="/assets/ProfilePicture.jpg"
                   alt=' '
                   className="w-full h-full object-center object-cover"
                 />
