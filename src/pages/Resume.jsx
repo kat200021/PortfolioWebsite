@@ -129,7 +129,7 @@ const Resume = () => {
       
       <div className="flex justify-between items-center mt-8 mb-12">
         <h2 className="text-xl font-semibold">Professional Overview</h2>
-        <DownloadButton link="/assets/ShreyaReddy.pdf" text="Download PDF" />
+        <DownloadButton link={`${process.env.PUBLIC_URL}/assets/ShreyaReddy.pdf`}text="Download PDF" />
       </div>
       
       <motion.div
