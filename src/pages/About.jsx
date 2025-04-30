@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import myPhoto from '../assets/ProfilePicture.jpg';
+import myPhoto from '..public/assets/ProfilePicture.jpg';
 
 const About = () => {
   // Education data
