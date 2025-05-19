@@ -3,8 +3,8 @@ import { Github, Linkedin } from 'lucide-react';
 
 const SocialLinks = () => {
   const socialPlatforms = [
-    { name: 'GitHub', icon: <Github className="w-6 h-6" />, url: 'https://github.com/yourusername' },
-    { name: 'LinkedIn', icon: <Linkedin className="w-6 h-6" />, url: 'https://linkedin.com/in/yourusername' },
+    { name: 'GitHub', icon: <Github className="w-6 h-6" />, url: 'https://github.com/kat200021' },
+    { name: 'LinkedIn', icon: <Linkedin className="w-6 h-6" />, url: 'https://www.linkedin.com/in/shreyakatanguru/' },
   ];
 
   const container = {

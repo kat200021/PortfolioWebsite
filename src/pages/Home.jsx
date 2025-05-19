@@ -58,13 +58,6 @@ const Home = () => {
       // Update the visibility of scroll buttons based on the new position
       updateScrollButtons(newPosition, maxScroll);
     };
-    
-
-    // useEffect(() => {
-    //   console.log('Updated sliderPosition:', sliderPosition); // This will log whenever sliderPosition changes
-    // }, [sliderPosition]); // Runs whenever sliderPosition changes
-    
-    
 
     const updateScrollButtons = (position, maxScroll) => {
       setCanScrollLeft(position < 0);
@@ -260,8 +253,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-
 
       {/* Featured Projects Section */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
